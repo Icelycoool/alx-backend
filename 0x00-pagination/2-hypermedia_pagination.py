@@ -48,7 +48,8 @@ class Server:
         Get a page of data along with pagintion informtion.
         """
         data = self.get_page(page, page_size)
-        total_items = len(data)
+        data_list = self.dataset()
+        total_items = len(data_list)
         total_pages = math.ceil(total_items / page_size)
         next_page = page + 1 if page < total_pages else None
         prev_page = page - 1 if page > 1 else None
